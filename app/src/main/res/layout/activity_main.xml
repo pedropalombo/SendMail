@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    tools:context=".MainActivity">
+
+    <!-- | "Para" container | -->
+    <LinearLayout
+        android:id="@+id/toLl"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- | Label for Recipient Email Input | -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:labelFor="@id/toEt"
+
+            android:text="To:"
+            android:textSize="20sp"
+            />
+
+        <!-- | Recipient Email | -->
+        <EditText
+            android:id="@+id/toEt"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="textEmailAddress" />
+
+    </LinearLayout>
+
+    <!-- | "Em cópia" container | -->
+    <LinearLayout
+        android:id="@+id/ccLl"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toLl">
+
+        <!-- | Label for Related Email Input | -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:labelFor="@id/ccEt"
+
+            android:text="Cc:"
+            android:textSize="20sp"
+            />
+
+        <!-- | Related Email | -->
+        <EditText
+            android:id="@+id/ccEt"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="textEmailAddress" />
+
+    </LinearLayout>
+
+    <!-- | "Em cópia oculta" container | -->
+    <LinearLayout
+        android:id="@+id/bccLl"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ccLl">
+
+        <!-- | Label for Hidden Related Email Input | -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:labelFor="@id/bccEt"
+
+            android:text="Bcc:"
+            android:textSize="20sp"
+            />
+
+        <!-- | Related Email | -->
+        <EditText
+            android:id="@+id/bccEt"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="textEmailAddress" />
+
+    </LinearLayout>
+
+    <!-- | "Assunto" container | -->
+    <LinearLayout
+        android:id="@+id/subjectLl"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bccLl">
+
+        <!-- | Label for Subject Text Input | -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:labelFor="@id/subjectEt"
+
+            android:text="Subject:"
+            android:textSize="20sp"
+            />
+
+        <!-- | Subject Input Box | -->
+        <EditText
+            android:id="@+id/subjectEt"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <!-- | "Mensagem" container | -->
+    <LinearLayout
+        android:id="@+id/messageLl"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subjectLl">
+
+        <!-- | Label for Message Text Area | -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:labelFor="@id/messageEt"
+
+            android:text="Message:"
+            android:textSize="20sp"
+            />
+
+        <!-- | Message Input Area | -->
+        <EditText
+            android:id="@+id/messageEt"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:inputType="textMultiLine"
+            android:lines="14" />
+
+    </LinearLayout>
+
+    <!-- | Footer Buttons container | -->
+    <LinearLayout
+        android:id="@+id/buttonsLl"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+        <!-- | "Limpar" button | -->
+        <Button
+            android:id="@+id/cleanBt"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+
+            android:text="Clean form" />
+
+        <!-- | "Enviar" button | -->
+        <Button
+            android:id="@+id/sendBt"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+
+            android:text="Send email" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
